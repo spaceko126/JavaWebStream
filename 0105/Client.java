@@ -4,7 +4,7 @@ import java.io.*;
 public class Client {
     public static void main(String[]args)throws Exception{
 
-        Socket socket =new Socket("192.168.54.75",1000);
+        Socket socket =new Socket("192.168.54.71",1000);
 
         BufferedReader in =new BufferedReader(new InputStreamReader(System.in));
         PrintStream out =new PrintStream(socket.getOutputStream());
@@ -13,11 +13,13 @@ public class Client {
         
         String message="";
         String message2="";
+        
         while(!(message=in.readLine()).equals("quit")){
             out.println(message);
+            message2=in2.readLine();
             out2.println(message2);
         }
-
+        
         out.println(message);
         socket.close();
     }

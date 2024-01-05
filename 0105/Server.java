@@ -15,7 +15,7 @@ public class Server{
         while(!(message=in.readLine()).equals("quit")){
             out.println(message);
             message2=message.concat(" from Server");
-            out.println(message2);
+            out2.println(message2);
         }
         socket.close();
 
