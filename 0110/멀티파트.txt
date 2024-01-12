@@ -1,0 +1,25 @@
+conn.setRequestProperty("Content-Type","application/json; charset-utf-8");   
+    Json파일 보낼때 사용      텍스트파일 보낼때 ->  text/html/; charset-utf-8
+conn.setRequestProperty("Content-Type","application/octet-stream");
+    바이너리 파일 보낼때 사용      Content-Type 바디에 어떤 타입인지 지정
+    여러개 타입을 보낼때 body 파트를 나누어서 사용   Content-Tpye:multipart/form-data; boundary =abc123      bounday-> 파트 구분자
+멀티파트일때 Body
+
+Body   ... 은 적어야할 내용 들어가야할 내용
+
+==abc123
+Content-Disposition : form-data name=...(key value type) filename=...()         //filename은 application에만 존재 text에는 없음
+Content-type : application/octet-MediaStream
+비움
+Date...
+비움
+==abc123
+Content-Type : text/html/; charset-utf-8 
+비움
+이순신
+비움
+==abc123==   //제일 마지막파트 에는 ==을 뒤에 더 붙여준다
+...
+...
+...
+
